@@ -41,4 +41,9 @@ public class forumcontroller {
 	
 		
 	}
+	@GetMapping("/forumAccess")
+	public Boolean forumAccess()
+	{
+		return false;
+	}	
 }

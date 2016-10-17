@@ -49,12 +49,12 @@
 				</div>
 			</c:when>
 			<c:otherwise>
-	<%-- 		<sec:authorize access="hasRole('Role_user')"> --%>
+			<%-- <sec:authorize access="hasRole('Role_user')"> --%>
 				<div class="container-fluid">
 					<c:import url="/WEB-INF/jsp/profilebody.jsp">
 					</c:import>
 				</div>
-			<%-- </sec:authorize> --%>
+		<%--  </sec:authorize> --%>
 			</c:otherwise>
 	</c:choose>
 
@@ -63,6 +63,6 @@
 	<input type="file" class=" btn btn-default" id="file" name="file"  onchange="angular.element(this).scope().uploadFile(this.files)">
 	<input type="submit" class=" btn btn-primary" value="Add Image">
 </div>
-
+ 
 		
 				

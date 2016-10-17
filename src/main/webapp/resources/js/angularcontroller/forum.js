@@ -1,4 +1,6 @@
 var app = angular.module('Myapp', []);
+
+/*$scope.userid=document.getElementById("id").value;*/
 app.controller('forumcontroller',['$scope','$http',function($scope,$http){
 	$scope.submit=function()
 	{
@@ -63,6 +65,18 @@ app.controller('forumcontroller',['$scope','$http',function($scope,$http){
 				
 				
 			};
+			$scope.accessForum = function(fuserid) {
+						//alert("Hello"+f_userid);
+						if($scope.userid==fuserid)
+				 		{
+				 			return true;
+				 		}
+				 		else
+				 			{
+				
+				 			return false;
+				 		}
+				 	}
 			
 
 }]);

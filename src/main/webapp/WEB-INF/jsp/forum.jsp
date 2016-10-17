@@ -57,7 +57,10 @@
 			</tbody>
 		</table>
 	</div>
+<input type="text" value="${sessionScope.id}" style="margin-top: 75px" id="id" hidden="true" />
 
+<script src="${pageContext.request.contextPath}/resources/js/angularcontroller/forum.js"></script>
 
+</div>
 </body>
 </html>

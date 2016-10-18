@@ -1,15 +1,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ <%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Bootstrap Example</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/javascript"></script>
 </head>
-<body >
-	<div class="container text-center">
+<body>
+<sec:authorize access="isAuthenticated()">
+
+<div class="container text-center">
 		<div class="row">
 			<div class="col-sm-3 well ">
 				<div class="well" data-ng-init="profileimage()" data-ng-controller="ProfileImage">
@@ -18,7 +21,7 @@
 				</div>
 				<div class="well">
 				<a data-toggle="tab" href="#home" class="active">Home</a> ||
-				<a data-toggle="tab" href="#new" class="btn btn-primary">Settings</a>
+				<a data-toggle="tab" href="#new">Settings</a>
 				</div>
 			</div>
 
@@ -35,6 +38,8 @@
 			</div>
 		</div>
 	</div>
+
+		</sec:authorize>
 <script src="${pageContext.request.contextPath}/resources/js/angularcontroller/Profile.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/angularcontroller/Settings.js"></script>
 </body>

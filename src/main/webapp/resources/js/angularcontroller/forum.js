@@ -1,6 +1,6 @@
 var app = angular.module('Myapp', []);
 
-/*$scope.userid=document.getElementById("id").value;*/
+/*$scope.fid=document.getElementById("id").value;*/
 app.controller('forumcontroller',['$scope','$http',function($scope,$http){
 	$scope.submit=function()
 	{

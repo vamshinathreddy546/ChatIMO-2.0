@@ -18,6 +18,8 @@
 					
 					<li><a href="${pageContext.request.contextPath}/Blog" style="color: red">Blog</a></li>
 					<li><a href="${pageContext.request.contextPath}/forum" style="color: red">Forum</a></li>
+					<li><a href="${pageContext.request.contextPath}/chat" style="color: red">Chat</a></li>
+					
 					
 					
 					<sec:authorize access="!isAuthenticated()">

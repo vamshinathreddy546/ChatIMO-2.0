@@ -13,6 +13,7 @@
 <script src="${pageContext.request.contextPath}/resources/js/angularcontroller/blog.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/angularcontroller/forum.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/angularcontroller/user.js"></script>
+<script src="resources/js/angularcontroller/Chat.js" type="text/javascript"></script>
 
  <title>HACK</title>
 </head>
@@ -48,21 +49,32 @@
 					</c:import>
 				</div>
 			</c:when>
+			
+			<c:when test="${ChatClicked}">
+				<div class="container">
+					<c:import url="/WEB-INF/jsp/Chat.jsp">
+					</c:import>
+					</div>
+					</c:when>
 			<c:otherwise>
-			<%-- <sec:authorize access="hasRole('Role_user')"> --%>
+			<%--  <sec:authorize access="hasRole('Role_user')"> --%> 
 				<div class="container-fluid">
 					<c:import url="/WEB-INF/jsp/profilebody.jsp">
 					</c:import>
-				</div>
-		<%--  </sec:authorize> --%>
-			</c:otherwise>
-	</c:choose>
-
-<div data-ng-controller="UserImage">
+					<div data-ng-controller="UserImage">
 
 	<input type="file" class=" btn btn-default" id="file" name="file"  onchange="angular.element(this).scope().uploadFile(this.files)">
 	<input type="submit" class=" btn btn-primary" value="Add Image">
 </div>
+				</div>
+		  <%-- </sec:authorize> --%>
+		  
+  
+			</c:otherwise>
+			
+	</c:choose>
+	 
  
+
 		
 				

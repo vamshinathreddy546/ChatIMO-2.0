@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js "></script>
 <script src="${pageContext.request.contextPath}/resources/js/angularcontroller/forum.js"></script>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 </head>
 <body data-ng-controller="forumcontroller">
 <div>
@@ -35,6 +37,8 @@
 					
 						<th>Delete FORUM</th>
 						<th>Edit FORUM</th>
+						<th>View FORUM</th>
+						
 					
 				</tr>
 			</thead>
@@ -43,12 +47,14 @@
 					<td>{{forum.fid}}</td>
 					<td>{{forum.name}}</td>
 					<td>{{forum.description}}</td>
-					
+					<sec:authorize access="isAuthenticated()">
+					<div data-ng-if="accessforum(forum.fuserid)">
 						<td><button data-ng-click="deleteforum(forum.fid)"
 								class="btn btn-xs btn-danger">Delete</button></td>
 						<td><button data-ng-click="editforum(forum.fid)"
 								class="btn btn-xs btn-info">Edit</button></td>
-								
+								</div>
+						</sec:authorize>		
 					
 					<td width="5%"><a href="forum/{{forum.fid}}" class="btn btn-primary btn-xs">View</a></td>
 				</tr>
